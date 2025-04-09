@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MobilProg</string>
+    <string name="FenymeroGomb">Light measure</string>
+    <string name="LepesSzamlaloGomb">Step Counter</string>
+    <string name="HozzaadasGombListahoz">Add</string>
+    <string name="Utolsoeltavolitasa">Remove last item</string>
+    <string name="Eltavolitas">Remove</string>
+    <string name="ADatokMegadasa">Add details</string>
+    <string name="Mennyitfucc">How much would you like to run?</string>
+</resources>

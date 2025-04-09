@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">MobilProg</string>
+    <string name="FenymeroGomb">Fénymérő</string>
+    <string name="LepesSzamlaloGomb">Lépésszámláló</string>
+    <string name="HozzaadasGombListahoz">Hozzáadás</string>
+    <string name="Utolsoeltavolitasa">Utolsó eltávolítás</string>
+    <string name="Eltavolitas">Eltávolítás</string>
+    <string name="ADatokMegadasa">Adatok megadása</string>
+    <string name="Mennyitfucc">Mennyit szeretnél futni?</string>
+
+
 </resources>
