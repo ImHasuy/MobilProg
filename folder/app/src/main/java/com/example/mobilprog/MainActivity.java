@@ -1,6 +1,7 @@
 package com.example.mobilprog;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -107,7 +108,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-
-
+    public void ujakt(View view) {
+        Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+        startActivity(intent);
+    }
 }
