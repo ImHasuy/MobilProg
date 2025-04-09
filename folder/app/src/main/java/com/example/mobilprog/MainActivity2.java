@@ -86,8 +86,8 @@ public class MainActivity2 extends AppCompatActivity implements SensorEventListe
 
         float ratio = Math.min(1f, value / max);
 
-        int red = (int) (0 + (100 - 0) * ratio);
-        int green = (int) (0 + (100 - 0) * ratio);
+        int red = (int) (0 + (100) * ratio);
+        int green = (int) (0 + (100) * ratio);
         int blue = (int) (50 + (205 - 50) * ratio);
 
         int color = Color.rgb(red, green, blue);

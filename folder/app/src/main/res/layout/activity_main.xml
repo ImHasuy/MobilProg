@@ -29,8 +29,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="241dp"
-        android:layout_marginBottom="51dp"
+        android:layout_marginEnd="240dp"
+        android:layout_marginBottom="53dp"
+        android:onClick="lepesre"
         android:text="@string/LepesSzamlaloGomb" />
 
     <Button

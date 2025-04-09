@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
@@ -44,12 +45,21 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences("userdata", MODE_PRIVATE);
         String savedName = sharedPreferences.getString("name", "");
+        String savedAge = sharedPreferences.getString("age", "");
 
         if (!savedName.isEmpty()) {
             Nevvaltozo.setText(savedName);
         }else{
             Nevvaltozo.setText("Anonymous"); // Ha nincs mentett akkor ez lesz
         }
+
+        if (!savedAge.isEmpty()) {
+            Toast.makeText(this, savedAge + " éves vagy", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, "Kérlek válassz a menüpontokból!", Toast.LENGTH_SHORT).show();
+        }
+
+
 
         String[] array = {"0.5 km", "1 km", "3 km", "5 km", "10 km"};
         list = new ArrayList<>(Arrays.asList(array));
@@ -100,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void hozzaadas(View view) {
         myedittext = findViewById(R.id.ListaEditTextje);
-        list.add(String.valueOf(myedittext.getText()));
+        list.add(String.valueOf(myedittext.getText() + " km"));
         adapter.notifyDataSetChanged();
     }
 
@@ -131,6 +141,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void hozzaadasra(View view) {
         Intent intent = new Intent(MainActivity.this, MainActivity3.class);
+        startActivity(intent);
+    }
+
+    public void lepesre(View view) {
+        Intent intent = new Intent(MainActivity.this, MainActivity4.class);
         startActivity(intent);
     }
 }
