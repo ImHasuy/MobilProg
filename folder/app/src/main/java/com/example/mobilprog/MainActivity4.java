@@ -57,7 +57,7 @@ public class MainActivity4 extends AppCompatActivity implements SensorEventListe
 
         double magnitude = Math.sqrt(x*x + y*y + z*z);
 
-        if (magnitude > 3){
+        if (magnitude > 3){ //Azért 3, hogy látszódjon a működés, de így folyamatosan számol, 10-nél marad
             stepcount++;
             lepesszamlalotext.setText(String.valueOf(stepcount));
         }
