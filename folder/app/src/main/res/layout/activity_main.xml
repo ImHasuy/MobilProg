@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="776dp"
+        android:layout_marginBottom="777dp"
         android:fontFamily="@font/alfa_slab_one"
         android:text="Hello                    "
         android:textAlignment="center"
@@ -41,7 +41,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="138dp"
         android:layout_marginBottom="119dp"
-        android:onClick="ujakt"
+        android:onClick="Fenymerore"
         android:text="@string/FenymeroGomb" />
 
     <Button
@@ -96,12 +96,12 @@
 
     <TextView
         android:id="@+id/ValtoztatandoNevId"
-        android:layout_width="wrap_content"
+        android:layout_width="217dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="89dp"
-        android:layout_marginBottom="775dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="776dp"
         android:fontFamily="@font/alfa_slab_one"
         android:text="Anonymous"
         android:textColor="@color/yellow"
@@ -128,6 +128,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="47dp"
+        android:onClick="hozzaadasra"
         android:text="@string/ADatokMegadasa" />
 
 </RelativeLayout>

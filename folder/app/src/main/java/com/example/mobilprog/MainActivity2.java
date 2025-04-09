@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import android.graphics.Color;
+import android.view.View;
 
 
 
@@ -41,14 +43,18 @@ public class MainActivity2 extends AppCompatActivity implements SensorEventListe
         }
     }
 
+
+
     @Override
     public void onSensorChanged(SensorEvent event) {
         fenyerzekelovaltozo = findViewById(R.id.fenyszenzorertek);
         if(event.sensor.getType() == Sensor.TYPE_LIGHT){
-            fenyerzekelovaltozo.setText(String.valueOf(event.values[0]));
+            float lightValue = event.values[0];
+            fenyerzekelovaltozo.setText(String.valueOf(lightValue));
+            changeBackgroundColor(lightValue);
         }
-
     }
+
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
@@ -66,10 +72,31 @@ public class MainActivity2 extends AppCompatActivity implements SensorEventListe
     protected void onPause(){
         super.onPause();
         if(isSensor){
-            sensorManager.unregisterListener(this); //leallitjuk a listenert
+            sensorManager.unregisterListener(this);
             isSensor = false;
         }
     }
+
+
+    private void changeBackgroundColor(float value) {
+        View rootView = findViewById(R.id.main);
+
+
+        float max = 30000f;
+
+        float ratio = Math.min(1f, value / max);
+
+        int red = (int) (0 + (100 - 0) * ratio);
+        int green = (int) (0 + (100 - 0) * ratio);
+        int blue = (int) (50 + (205 - 50) * ratio);
+
+        int color = Color.rgb(red, green, blue);
+        rootView.setBackgroundColor(color);
+    }
+
+
+
+
 
 
 }

@@ -2,12 +2,14 @@ package com.example.mobilprog;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AlertDialog;
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     List<String> list;
     ArrayAdapter<String> adapter;
     EditText myedittext;
+
+    TextView Nevvaltozo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +38,18 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+
+        Nevvaltozo = findViewById(R.id.ValtoztatandoNevId);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("userdata", MODE_PRIVATE);
+        String savedName = sharedPreferences.getString("name", "");
+
+        if (!savedName.isEmpty()) {
+            Nevvaltozo.setText(savedName);
+        }else{
+            Nevvaltozo.setText("Anonymous"); // Ha nincs mentett akkor ez lesz
+        }
 
         String[] array = {"0.5 km", "1 km", "3 km", "5 km", "10 km"};
         list = new ArrayList<>(Arrays.asList(array));
@@ -108,8 +124,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void ujakt(View view) {
+    public void Fenymerore(View view) {
         Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+        startActivity(intent);
+    }
+
+    public void hozzaadasra(View view) {
+        Intent intent = new Intent(MainActivity.this, MainActivity3.class);
         startActivity(intent);
     }
 }
